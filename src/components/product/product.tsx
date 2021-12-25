@@ -10,7 +10,7 @@ function Product({guitar}: GuitarProps): JSX.Element {
   const previewImgUrl = previewImg.split('/');
 
   return (
-    <div key={id} className="product-card">
+    <div id={`${id}`} className="product-card">
       <img src={`img/content/${previewImgUrl[1]}`} width="75" height="190" alt="СURT Z30 Plus Acoustics" />
       <div className="product-card__info">
         <div className="rate product-card__rate" aria-hidden="true"><span className="visually-hidden">Рейтинг:</span>
