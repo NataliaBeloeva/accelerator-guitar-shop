@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { AppRoute, StarType } from '../../const';
 import { Guitar } from '../../types/guitar';
 import Rating from '../rating/rating';
 
@@ -14,7 +16,7 @@ function Product({guitar}: GuitarProps): JSX.Element {
       <img src={`img/content/${previewImgUrl[1]}`} width="75" height="190" alt="СURT Z30 Plus Acoustics" />
       <div className="product-card__info">
         <div className="rate product-card__rate" aria-hidden="true"><span className="visually-hidden">Рейтинг:</span>
-          <Rating rating={rating} />
+          <Rating rating={rating} starType={StarType.Default} />
           <span className="rate__count">{rating}</span>
           <span className="rate__message"></span>
         </div>
@@ -25,7 +27,7 @@ function Product({guitar}: GuitarProps): JSX.Element {
         </p>
       </div>
       <div className="product-card__buttons">
-        <a className="button button--mini" href="#!">Подробнее</a>
+        <Link to={`${AppRoute.Guitars}/${id}`} className="button button--mini" href="#!">Подробнее</Link>
         <a className="button button--red button--mini button--add-to-cart" href="#!">Купить</a>
       </div>
     </div>

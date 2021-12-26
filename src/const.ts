@@ -11,4 +11,9 @@ enum ServiceMessage {
   ServerFail = 'Сервер не отвечает, попробуйте позже',
 }
 
-export {AppRoute, ApiRoute, ServiceMessage};
+enum StarType {
+  Default = 'DEFAULT',
+  Product ='PRODUCT',
+}
+
+export {AppRoute, ApiRoute, ServiceMessage, StarType};

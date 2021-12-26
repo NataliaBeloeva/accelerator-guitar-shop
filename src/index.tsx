@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import browserHistory from './browser-history';
-import {ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Router as BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { createAPI } from './services/api';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { rootReducer } from './store/root-reducer';
-import App from './components/app/app';
 import { fetchGuitars } from './store/api-action';
+import App from './components/app/app';
 
 const api = createAPI();
 
@@ -28,7 +27,7 @@ store.dispatch(fetchGuitars());
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter history={browserHistory}>
+      <BrowserRouter>
         <ToastContainer />
         <App />
       </BrowserRouter>
